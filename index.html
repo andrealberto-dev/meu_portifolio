@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d0e11" />
     <meta
       name="description"
       content="Portfólio pessoal de André Lucas, estudante de Inteligência Artificial e Automação Digital, com foco em interfaces web, desenvolvimento e automação."
@@ -22,8 +23,10 @@
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/typography.css" />
     <link rel="stylesheet" href="./styles/page.css" />
+    <link rel="stylesheet" href="./plugins/simple-anime.css" />
   </head>
   <body>
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
     <header class="site-header" id="topo">
       <div class="container site-header__inner">
         <a class="brand" href="#topo" aria-label="Voltar ao topo">
@@ -50,7 +53,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="conteudo-principal">
       <section class="hero section">
         <div class="hero__ambient hero__ambient--left" aria-hidden="true"></div>
         <div
@@ -58,22 +61,25 @@
           aria-hidden="true"
         ></div>
         <div class="container hero__content">
-          <div class="hero__copy reveal">
-            <p class="section-label section-label--mono">
+          <div class="hero__copy reveal fadeInLeft" data-anime="150">
+            <p
+              class="section-label section-label--mono fadeInDown"
+              data-anime="250"
+            >
               Portfólio pessoal em evolução constante
             </p>
-            <h1>André Lucas</h1>
-            <p class="hero__subtitle">
+            <h1 class="fadeInDown" data-anime="350">André Lucas</h1>
+            <p class="hero__subtitle fadeInDown" data-anime="450">
               Estudante de Inteligência Artificial e Automação Digital,
               construindo interfaces, soluções e automações com foco em
               tecnologia, aprendizado contínuo e criatividade.
             </p>
-            <p class="hero__description">
+            <p class="hero__description fadeInDown" data-anime="550">
               Desenvolvo experiências para web e exploro o universo da
               automação, unindo programação, lógica e novas ferramentas para
               criar soluções modernas e funcionais.
             </p>
-            <div class="hero__actions">
+            <div class="hero__actions fadeInUp" data-anime="650">
               <a class="button button--primary" href="#skills"
                 >Ver habilidades</a
               >
@@ -81,7 +87,11 @@
                 >Entrar em contato</a
               >
             </div>
-            <ul class="hero__meta" aria-label="Tecnologias e estudos atuais">
+            <ul
+              class="hero__meta fadeInUp"
+              data-anime="750"
+              aria-label="Tecnologias e estudos atuais"
+            >
               <li>
                 <span class="hero__meta-icons" aria-hidden="true">
                   <img src="./assets/icons/html5.svg" alt="" />
@@ -135,10 +145,21 @@
             </ul>
           </div>
 
-          <div class="hero__panel reveal reveal--delay">
-            <div class="profile-card">
+          <div
+            class="hero__panel reveal reveal--delay fadeInRight"
+            data-anime="350"
+          >
+            <div class="profile-card fadeInRight" data-anime="500">
               <div class="profile-card__glow"></div>
-              <div class="profile-card__avatar"><span>AL</span></div>
+              <div class="profile-card__avatar">
+                <img
+                  src="./assets/profile.jpg"
+                  alt="Foto de perfil de André Lucas"
+                  width="112"
+                  height="112"
+                  decoding="async"
+                />
+              </div>
               <div class="profile-card__body">
                 <p class="profile-card__eyebrow">Formação atual</p>
                 <h2>Inteligência Artificial e Automação Digital</h2>
@@ -163,12 +184,12 @@
 
       <section class="section section--compact" id="sobre">
         <div class="container">
-          <div class="section-heading reveal">
+          <div class="section-heading reveal fadeInDown" data-anime="150">
             <p class="section-label">Sobre mim</p>
             <h2>Construindo base técnica com foco em web e automação</h2>
           </div>
           <div class="about-grid">
-            <article class="about-card reveal">
+            <article class="about-card reveal fadeInLeft" data-anime="300">
               <p>
                 Sou André Lucas, estudante de Inteligência Artificial e
                 Automação Digital, apaixonado por tecnologia, interfaces web e
@@ -185,7 +206,10 @@
                 experiências digitais de valor.
               </p>
             </article>
-            <aside class="about-highlights reveal reveal--delay">
+            <aside
+              class="about-highlights reveal reveal--delay fadeInRight"
+              data-anime="450"
+            >
               <div class="highlight-card">
                 <span class="highlight-card__title">Foco atual</span>
                 <strong
@@ -209,7 +233,7 @@
 
       <section class="section" id="skills">
         <div class="container">
-          <div class="section-heading reveal">
+          <div class="section-heading reveal fadeInDown" data-anime="150">
             <p class="section-label">Minhas habilidades</p>
             <h2>Tecnologias e ferramentas que fazem parte da minha evolução</h2>
             <p class="section-intro">
@@ -218,7 +242,7 @@
             </p>
           </div>
           <div class="skills-grid">
-            <article class="skill-card reveal">
+            <article class="skill-card reveal fadeInUp" data-anime="260">
               <div class="skill-card__icon-group" aria-hidden="true">
                 <img
                   class="skill-card__icon"
@@ -234,7 +258,7 @@
               <h3>HTML e CSS</h3>
               <p>Estrutura semântica, responsividade e organização visual.</p>
             </article>
-            <article class="skill-card reveal">
+            <article class="skill-card reveal fadeInUp" data-anime="340">
               <img
                 class="skill-card__icon"
                 src="./assets/icons/javascript.svg"
@@ -246,7 +270,7 @@
                 Interatividade, lógica de interface e comportamento dinâmico.
               </p>
             </article>
-            <article class="skill-card reveal">
+            <article class="skill-card reveal fadeInUp" data-anime="420">
               <img
                 class="skill-card__icon"
                 src="./assets/icons/python.svg"
@@ -259,7 +283,7 @@
                 lógica.
               </p>
             </article>
-            <article class="skill-card reveal">
+            <article class="skill-card reveal fadeInUp" data-anime="500">
               <span
                 class="skill-card__icon skill-card__icon--symbol"
                 aria-hidden="true"
@@ -271,7 +295,7 @@
                 Exploração de novos fluxos de construção e prototipação digital.
               </p>
             </article>
-            <article class="skill-card reveal">
+            <article class="skill-card reveal fadeInUp" data-anime="580">
               <img
                 class="skill-card__icon"
                 src="./assets/icons/make.svg"
@@ -281,7 +305,7 @@
               <h3>Make</h3>
               <p>Automação visual de processos com foco em produtividade.</p>
             </article>
-            <article class="skill-card reveal">
+            <article class="skill-card reveal fadeInUp" data-anime="660">
               <img
                 class="skill-card__icon"
                 src="./assets/icons/n8n.svg"
@@ -300,7 +324,7 @@
 
       <section class="section" id="projetos">
         <div class="container">
-          <div class="section-heading reveal">
+          <div class="section-heading reveal fadeInDown" data-anime="150">
             <p class="section-label">Projetos</p>
             <h2>Estrutura pronta para receber os próximos trabalhos</h2>
             <p class="section-intro">
@@ -310,7 +334,10 @@
             </p>
           </div>
           <div class="projects-placeholder">
-            <article class="placeholder-card reveal">
+            <article
+              class="placeholder-card reveal fadeInLeft"
+              data-anime="300"
+            >
               <div class="placeholder-card__preview"></div>
               <div class="placeholder-card__content">
                 <span class="placeholder-card__tag">Em preparação</span>
@@ -321,7 +348,10 @@
                 </p>
               </div>
             </article>
-            <article class="placeholder-card reveal reveal--delay">
+            <article
+              class="placeholder-card reveal reveal--delay fadeInRight"
+              data-anime="450"
+            >
               <div
                 class="placeholder-card__preview placeholder-card__preview--alt"
               ></div>
@@ -334,7 +364,7 @@
                 </p>
               </div>
             </article>
-            <article class="placeholder-note reveal">
+            <article class="placeholder-note reveal fadeInUp" data-anime="600">
               <p>
                 A seção foi preparada para crescimento do portfólio sem exigir
                 nova estrutura. Basta substituir os placeholders por projetos
@@ -346,14 +376,24 @@
       </section>
 
       <section class="section cta-section" id="contato">
-        <div class="container cta-section__inner reveal">
-          <p class="section-label section-label--purple">Contato</p>
-          <h2>Vamos conversar sobre desenvolvimento, estudos e automação</h2>
-          <p class="section-intro">
+        <div
+          class="container cta-section__inner reveal fadeInUp"
+          data-anime="150"
+        >
+          <p
+            class="section-label section-label--purple fadeInDown"
+            data-anime="250"
+          >
+            Contato
+          </p>
+          <h2 class="fadeInDown" data-anime="350">
+            Vamos conversar sobre desenvolvimento, estudos e automação
+          </h2>
+          <p class="section-intro fadeInDown" data-anime="450">
             Se você quer trocar ideias, acompanhar minha evolução ou entrar em
             contato, estes são os canais principais.
           </p>
-          <div class="contact-list">
+          <div class="contact-list fadeInUp" data-anime="550">
             <a
               class="contact-item contact-item--mail"
               href="mailto:andrelucasvitoralberto@gmail.com"
@@ -371,7 +411,7 @@
               class="contact-item contact-item--linkedin"
               href="https://www.linkedin.com/in/andré-lucas-dev"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Abrir LinkedIn de André Lucas"
             >
               <span class="contact-item__icon" aria-hidden="true"
@@ -384,7 +424,7 @@
               class="contact-item contact-item--github"
               href="https://github.com/andrealberto-dev"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Abrir GitHub de André Lucas"
             >
               <span class="contact-item__icon" aria-hidden="true"
@@ -397,7 +437,7 @@
               class="contact-item contact-item--instagram"
               href="https://www.instagram.com/andre_alberto7/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Abrir Instagram profissional de André Lucas"
             >
               <span class="contact-item__icon" aria-hidden="true"
@@ -432,6 +472,7 @@
       </div>
     </footer>
 
+    <script src="./plugins/simple-anime.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

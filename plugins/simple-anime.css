@@ -1,0 +1,40 @@
+[data-anime] {
+  opacity: 0;
+  filter: blur(5px);
+  will-change: transform, opacity, filter;
+  transition:
+    transform 1.15s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 1.15s ease,
+    filter 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fadeInDown {
+  transform: translate3d(0, -12px, 0);
+}
+
+.fadeInUp {
+  transform: translate3d(0, 12px, 0);
+}
+
+.fadeInRight {
+  transform: translate3d(12px, 0, 0);
+}
+
+.fadeInLeft {
+  transform: translate3d(-12px, 0, 0);
+}
+
+.anime {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-anime] {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+}

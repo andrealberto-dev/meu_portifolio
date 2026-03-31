@@ -27,6 +27,9 @@
   --instagram: #9a6fd1;
   --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.34);
   --shadow-md: 0 18px 40px rgba(0, 0, 0, 0.22);
+  --hover-scale-sm: scale(1.016);
+  --hover-scale-xs: scale(1.008);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
   --radius-lg: 28px;
   --radius-md: 20px;
   --radius-sm: 14px;
