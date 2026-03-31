@@ -158,55 +158,103 @@ ul {
 }
 
 .fadeInUp {
-  transform: translate3d(0, 24px, 0);
+  transform: translate3d(0, 18px, 0);
 }
 
 .fadeInDown {
-  transform: translate3d(0, -24px, 0);
+  transform: translate3d(0, -18px, 0);
 }
 
 .fadeInLeft {
-  transform: translate3d(-24px, 0, 0);
+  transform: translate3d(-18px, 0, 0);
 }
 
 .fadeInRight {
-  transform: translate3d(24px, 0, 0);
+  transform: translate3d(18px, 0, 0);
 }
 
 [data-anime] {
   opacity: 0;
-  filter: blur(5px);
+  filter: blur(6px);
   will-change: transform, opacity, filter;
-  transition:
-    transform 1.15s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 1.15s ease,
-    filter 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 [data-anime].anime {
   opacity: 1;
   filter: blur(0);
-  transform: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+.fadeInUp.anime {
+  animation: fadeInUpSoft 0.82s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.fadeInDown.anime {
+  animation: fadeInDownSoft 0.82s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.fadeInLeft.anime {
+  animation: fadeInLeftSoft 0.82s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.fadeInRight.anime {
+  animation: fadeInRightSoft 0.82s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeInUpSoft {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translate3d(0, 18px, 0);
   }
 
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-  }
-
-  [data-anime] {
+  to {
     opacity: 1;
-    filter: none;
-    transform: none;
-    will-change: auto;
-    transition: none;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDownSoft {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translate3d(0, -18px, 0);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeftSoft {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translate3d(-18px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInRightSoft {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translate3d(18px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
