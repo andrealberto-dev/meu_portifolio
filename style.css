@@ -1,0 +1,7 @@
+/* CSS Váriaveis, global e tipografia */
+@import url(./styles/variables.css);
+@import url(./styles/global.css);
+@import url(./styles/typography.css);
+
+/* CSS Página */
+@import url(./styles/page.css);

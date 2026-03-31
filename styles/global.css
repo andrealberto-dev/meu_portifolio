@@ -173,6 +173,22 @@ ul {
   transform: translate3d(24px, 0, 0);
 }
 
+[data-anime] {
+  opacity: 0;
+  filter: blur(5px);
+  will-change: transform, opacity, filter;
+  transition:
+    transform 1.15s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 1.15s ease,
+    filter 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-anime].anime {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -189,6 +205,8 @@ ul {
     opacity: 1;
     filter: none;
     transform: none;
+    will-change: auto;
+    transition: none;
   }
 }
 
