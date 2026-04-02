@@ -512,6 +512,97 @@
   gap: 24px;
 }
 
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  overflow: hidden;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+  transition:
+    transform 0.42s var(--ease-smooth),
+    border-color 0.32s ease,
+    background-color 0.32s ease,
+    box-shadow 0.42s var(--ease-smooth);
+}
+
+.project-card:hover {
+  transform: var(--hover-scale-sm);
+}
+
+.project-card__image {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: top center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: #14171d;
+}
+
+.project-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 26px;
+}
+
+.project-card__tag {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.project-card__content p {
+  color: var(--text-soft);
+}
+
+.project-card__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-card__stack-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.project-card__stack-item img,
+.project-card__stack-item i {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+}
+
+.project-card__stack-item i {
+  display: inline-grid;
+  place-items: center;
+  color: var(--secondary-soft);
+  font-size: 1rem;
+}
+
+.project-card__button {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
 .placeholder-card {
   overflow: hidden;
   transition:
@@ -696,7 +787,8 @@
 @media (max-width: 1024px) {
   .hero__content,
   .about-grid,
-  .projects-placeholder {
+  .projects-placeholder,
+  .projects-grid {
     grid-template-columns: 1fr;
   }
 
@@ -800,6 +892,7 @@
   .about-card,
   .highlight-card,
   .skill-card,
+  .project-card__content,
   .placeholder-card__content,
   .placeholder-note,
   .contact-item {
@@ -816,6 +909,10 @@
 
   .placeholder-card__preview {
     height: 190px;
+  }
+
+  .project-card__image {
+    height: 210px;
   }
 }
 .contact-item:hover .contact-item__icon {
